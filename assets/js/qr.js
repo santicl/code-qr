@@ -1,6 +1,7 @@
 const containerQr = document.getElementById('qr-container');
 const form = document.getElementById('form');
 const urlInput = document.getElementById('url-input');
+const btnDownload = document.getElementById('download-btn');
 
 urlInput.focus();
 
@@ -23,4 +24,12 @@ form.addEventListener('submit', (e) => {
         QR.makeCode(urlInput.value);
         e.target.reset();
     }
+})
+
+btnDownload.addEventListener('click', (e) => {
+    const a = document.createElement('a');
+    a.download = true;
+    a.target = '_blank'
+    a.href = QR._el.lastChild.src;
+    a.click()
 })
