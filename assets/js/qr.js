@@ -5,8 +5,8 @@ const urlInput = document.getElementById('url-input');
 urlInput.focus();
 
 const QR = new QRCode(containerQr, {
-    width: 300,
-    height: 300
+    width: 200,
+    height: 200
 });
 
 form.addEventListener('submit', (e) => {
