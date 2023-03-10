@@ -2,6 +2,7 @@ const containerQr = document.getElementById('qr-container');
 const form = document.getElementById('form');
 const urlInput = document.getElementById('url-input');
 const btnDownload = document.getElementById('download-btn');
+const comment = document.getElementById('comment');
 
 urlInput.focus();
 
@@ -22,6 +23,7 @@ form.addEventListener('submit', (e) => {
         console.log(urlInput.value)
 
         QR.makeCode(urlInput.value);
+        comment.textContent = '';
         e.target.reset();
     }
 })
